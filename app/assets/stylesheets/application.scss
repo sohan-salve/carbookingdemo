@@ -1,0 +1,33 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+.font{
+    font-size: 30px;
+    font-family: Ariblk;
+}
+.bg{
+   background-image: url('https://www.carrentalscript.com/wp-content/uploads/powerful-online-car-and-taxi-booking-software.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 1000px;
+   margin-top:90px;
+   
+}
+footer{
+    background-color: green;
+}
+

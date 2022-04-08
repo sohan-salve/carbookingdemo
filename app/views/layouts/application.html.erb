@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carbooking</title>
+    <link rel="icon" type="image/x-icon" href="https://cardefender.ca/wp-content/uploads/2019/01/cropped-favicon-300x300.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+
+  <header class="bg-white fixed-top">
+  <div class="containern">
+
+  <ul class="nav" style="padding: 2px,3px,3px,2px">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class:"nav-link text-dark font"  %>
+  </li>
+  
+  <li class="nav-item">
+    <%= link_to "demo", root_path, class:"nav-link text-dark font "%>
+  </li>
+
+  <% if !current_user %>
+
+  <li class="nav-item">
+  <%= link_to "sign in", new_user_session_path , class:"nav-link text-dark font"%>
+  </li>
+
+  <li class="nav-item">
+  <%= link_to "sign up", new_user_registration_path , class:"nav-link text-dark font"%>
+  </li>
+
+   <%else%>
+
+  <li class="nav-item mt-3">
+  <%= button_to "sign out", destroy_user_session_path, method: :delete, class:"btn" %>
+  </li>
+
+  <li class="nav-item mt-3">
+  <%= button_to "My vehicles", root_path, class:"btn" %>
+  </li>
+  
+  <%end%>
+
+  <li class="nav-item">
+  <img src="https://t4.ftcdn.net/jpg/00/76/00/65/360_F_76006563_NEh2uRX5XSYHbHtJB0vvcGzrWvUdpIx2.jpg" alt="image" class="w-25">
+  </li>
+
+  
+
+</ul>
+</div>
+  </header>
+
+
+  
+  <body >
+  
+    <div class="bg">
+    <%= yield %>
+    </div>
+    
+  </body>
+  
+  
+  
+</html>
