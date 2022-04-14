@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :vehicles, foreign_key: "owner_id"
+  has_many :orders
 end

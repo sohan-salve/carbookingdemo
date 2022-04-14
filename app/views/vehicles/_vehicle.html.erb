@@ -1,22 +1,22 @@
-<div id="<%= dom_id vehicle %>" >
-  <p>
-    <strong>Model:</strong>
-    <%= vehicle.model %>
-  </p>
-
-  <p>
-    <strong>Color:</strong>
-    <%= vehicle.color %>
-  </p>
-
-  <p>
-    <strong>Fuel type:</strong>
-    <%= vehicle.fuel_type %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= vehicle.price %>
-  </p>
-
+<div >
+<% if vehicle.image.attached? %>
+<div>
+<%= image_tag vehicle.image, style: "width: 100%"%>
+</div>
+<% end %>
+     
+       <strong>Model:</strong>
+       <%= vehicle.model %>
+       <br>
+       <strong>Color:</strong>
+       <%= vehicle.color %>
+       <br>
+       <strong>Fuel type:</strong>
+       <%= vehicle.fuel_type %>
+       <br>
+       <strong>Price:</strong>
+       <%= vehicle.price %>
+    
+     
+   
 </div>

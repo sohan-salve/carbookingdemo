@@ -13,26 +13,33 @@
   <% end %>
 
   <div class="w-25">
-    <%= form.label :model, style: "display: block" %>
+    <%= form.label :Model, style: "display: block" %>
     <%= form.text_field :model %>
   </div>
 
-  <div class="w-25">
-    <%= form.label :color, style: "display: block" %>
+  <div class="w-25 mt-1">
+    <%= form.label :Color, style: "display: block" %>
     <%= form.text_field :color %>
   </div>
 
-  <div class="w-25">
-    <%= form.label :fuel_type, style: "display: block" %>
+  <div class="w-25 mt-1">
+    <%= form.label :Fuel_type, style: "display: block" %>
     <%= form.text_field :fuel_type %>
   </div>
 
-  <div class="w-25">
-    <%= form.label :price, style: "display: block" %>
+  <div class="w-25 mt-1">
+    <%= form.label :Price, style: "display: block" %>
     <%= form.text_field :price %>
   </div>
 
-  <div class="w-25">
+  
+
+  <div class="w-25 mt-1">
+    <%= form.label :Image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="w-25 mt-4">
     <%= form.submit %>
   </div>
 <% end %>

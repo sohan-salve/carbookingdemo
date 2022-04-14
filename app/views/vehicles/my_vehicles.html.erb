@@ -1,0 +1,47 @@
+<span><h1 class="text-dark text-center ">My Vehicles</h1></span>
+
+<div id="vehicles" class="container">
+   <div class="row ">
+  <% @vehicles.each do |vehicle| %>
+     
+     <div class="card col-2 bg-success mx-2 my-2">
+
+     <div >
+         <% if vehicle.image.attached? %>
+         <div class="mt-2">
+         <%= image_tag vehicle.image, style: "width: 100%; height: 150px"%>
+         </div>
+         <% end %>
+     
+         <strong>Model:</strong>
+         <%= vehicle.model %>
+         <br>
+         <strong>Color:</strong>
+         <%= vehicle.color %>
+         <br>
+         <strong>Fuel type:</strong>
+         <%= vehicle.fuel_type %>
+         <br>
+         <strong>Price:</strong>
+         <%= vehicle.price %> 
+     </div>
+    
+    
+      <hr>
+       <div>
+       
+      <%= link_to "Show", vehicle, class:"text-dark text-decoration-none" %> |
+       
+
+      <%= link_to "Edit", edit_vehicle_path(vehicle), class:"text-decoration-none text-dark"%>|
+       
+      <%= button_to "Delete", vehicle, method: :delete, class:" text-danger"%>
+      
+      </div>
+    
+    </div>
+    <% end %>
+
+   </div>
+
+</div>

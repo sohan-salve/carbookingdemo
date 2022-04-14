@@ -1,0 +1,14 @@
+<div>
+<strong>Model:</strong>
+       <%= @vehicle.model %>
+       <br>
+       <strong>Color:</strong>
+       <%= @vehicle.color %>
+       <br>
+       <strong>Fuel type:</strong>
+       <%= @vehicle.fuel_type %>
+       <br>
+       <strong>Price:</strong>
+       <%= @vehicle.price %>
+<%= button_to "Proceed", orders_path, method: :post %>
+<div>
