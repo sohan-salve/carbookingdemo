@@ -1,8 +1,16 @@
 <h1>Sign up</h1>
 <div class="container">
+<% puts "hello" %>
+<% if @user.errors.any?%>
+    <%debugger%>
+    
+     <% @user.errors.full_messages.each do |message|%>
+       <h1> <%= message %></h1>
+     <%end%>
+<% end %>
 
 <%= form_for(@user, url: user_registration_path(@user)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource%>
+  <%= render "devise/shared/error_messages"%>
  
   <div class="field w-25">
     <%= f.label :full_name %><br/>

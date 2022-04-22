@@ -11,7 +11,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    debugger
+    # debugger
     super
   end
 
@@ -22,11 +22,13 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-     debugger
     @user = current_user
-    @user.update(user_params)
-    flash[:notice] ="Profile updated successfully!"
-    redirect_to vehicles_path
+    if (user_params[:password].blank? && @user.update_without_password(user_params)) || @user.update(user_params)
+      sign_in(@user, bypass: true)
+      redirect_to vehicles_path, notice: 'Your profile changes have been saved.'
+    else
+      render 'edit'
+    end
   end
 
   # DELETE /resource
@@ -60,12 +62,20 @@ class User::RegistrationsController < Devise::RegistrationsController
     super(resource)
   end
 
-  def user_params
-    params.require(:user).permit(:full_name, :contact_no, :address, :email, :password, :confirmation_password)
-  end
-
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
     super(resource)
+  end
+
+  def user_params
+    accessible = [
+      :full_name,
+      :address,
+      :contact_no,
+      :email,
+      :password,
+      :password_confirmation
+    ]
+    params.require(:user).permit(accessible)
   end
 end
