@@ -10,5 +10,5 @@
        <br>
        <strong>Price:</strong>
        <%= @vehicle.price %>
-<%= button_to "Proceed", orders_path, method: :post %>
-<div>
+<%= button_to "Proceed", orders_path(vehicle_id: @vehicle.id), method: :post %>
+</div>

@@ -4,9 +4,7 @@
     <title>Carbooking</title>
     <link rel="icon" type="image/x-icon" href="https://cardefender.ca/wp-content/uploads/2019/01/cropped-favicon-300x300.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -15,6 +13,8 @@
   <header class="bg-white fixed-top">
   <div class="containern">
 
+   <div class="row">
+   <div class="col-8">
   <ul class="nav" style="padding: 2px,3px,3px,2px">
 
   <li class="nav-item">
@@ -50,19 +50,31 @@
   </li>
 
   <li class="nav-item mt-3">
+  <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link text-dark text-decoration-none" %>
+  </li>
+
+  <li class="nav-item mt-3">
   <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-dark" %>
   </li>
   
   <%end%>
 
+  
 </ul>
+</div>
+ <div class="col-4 mt-3">
+ <% if current_user %>
+   <%= link_to "my orders", my_orders_orders_path, class:"text-info btn btn-dark text-decoration-none" %>
+ <%end%>
+
+ </div>
+</div>
 </div>
   </header>
 
 
   
-  <body >
-  
+  <body >  
     <div class="bg">
     <%= yield %>
     </div>

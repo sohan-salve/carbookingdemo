@@ -1,0 +1,19 @@
+<span><h1 class="text-dark text-center ">My Orders</h1></span>
+ <div class="container">
+  <div class="row">
+<% @orders.each do |order| %>
+       <div class="card col-2 mx-2 my-2">
+      <h4> Order </h4>
+      <p><strong>Oreder Id:</strong>
+         <%= order.id %></p>
+         <p><strong>Vehicle Model:</strong>
+         <%=order.vehicle.model %></p>
+         <p><strong>Payment Status:</strong>
+         <span style="color:red;"><%=order.status%></span></p>
+     <%= button_to "Delete", order, method: :delete, class:" text-danger"%>
+     <%= button_to "Pay Now", "#", style:"color:orange;"%>
+     
+      </div>
+   <% end %>
+   </div>
+ </div>
