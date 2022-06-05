@@ -2,7 +2,7 @@
 <div class="container">
 <% puts "hello" %>
 <% if @user.errors.any?%>
-    <%debugger%>
+    
     
      <% @user.errors.full_messages.each do |message|%>
        <h1> <%= message %></h1>

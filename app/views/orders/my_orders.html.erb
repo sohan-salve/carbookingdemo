@@ -3,15 +3,22 @@
   <div class="row">
 <% @orders.each do |order| %>
        <div class="card col-2 mx-2 my-2">
-      <h4> Order </h4>
+      <h4 class="text-primary"> Order </h4>
       <p><strong>Oreder Id:</strong>
          <%= order.id %></p>
          <p><strong>Vehicle Model:</strong>
          <%=order.vehicle.model %></p>
          <p><strong>Payment Status:</strong>
          <span style="color:red;"><%=order.status%></span></p>
-     <%= button_to "Delete", order, method: :delete, class:" text-danger"%>
-     <%= button_to "Pay Now", "#", style:"color:orange;"%>
+         <div class="row mb-2">
+            <div class="col-6">
+              <%= button_to "Delete", order, method: :delete, class:" text-danger"%>
+            </div>
+            <div class="col-6">
+              <%= link_to "Pay", new_charge_path, style:"color:orange; text-decoration: none;"%>
+            </div>
+         </div>
+         
      
       </div>
    <% end %>

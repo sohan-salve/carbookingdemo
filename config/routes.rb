@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+  get 'charges/create'
   resources :orders do
     get :my_orders, on: :collection
   end
@@ -12,6 +14,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         registrations: 'user/registrations'
       }
+
+
+       resources :charges, only: [:new, :create]
+      #  devise_for :users
+       resources :posts
+      #  root to: 'posts#index'
 
 
 

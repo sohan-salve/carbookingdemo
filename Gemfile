@@ -1,11 +1,11 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-# gem "rails", "~> 7.0.2", ">= 7.0.2.3"
-  gem "rails", "~> 6.0.0"
+   gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+  # gem "rails", "~> 6.0.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -74,3 +74,9 @@ end
 gem 'devise'
 gem 'bootstrap'
 gem 'activeadmin'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem "net-http"
+
+#payment gateway
+gem 'stripe'
+gem "letter_opener", group: :development
