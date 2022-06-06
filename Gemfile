@@ -88,3 +88,5 @@ gem "net-http"
 #payment gateway
 gem 'stripe'
 gem "letter_opener", group: :development
+
+
