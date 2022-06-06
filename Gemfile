@@ -12,7 +12,7 @@ ruby ENV['CUSTOM_RUBY_VERSION'] || '3.0.0'
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
- gem "sqlite3", "~> 1.4"
+#  gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -73,9 +73,10 @@ group :test do
   gem "webdrivers"
 end
 
-# group :development, :test do 
-#   gem 'sqlite3'  #gem to use in development-test environment
-# end
+
+group :development, :test do # <<<< :development, not devlopment
+  gem 'sqlite3'
+end
 
 
 gem 'devise'
