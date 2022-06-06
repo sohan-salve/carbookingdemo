@@ -75,7 +75,7 @@ end
 
 
 group :development, :test do # <<<< :development, not devlopment
-  gem 'pg'
+  gem 'pg', '~> 0.20'
 end
 
 
