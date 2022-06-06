@@ -77,7 +77,7 @@ end
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
 end
-gem 'pg', '~> 0.21.0'
+gem 'pg', '~> 0.21'
 
 gem 'devise'
 gem 'bootstrap'
