@@ -319,7 +319,7 @@ DEPENDENCIES
   rails (~> 7.0.2, >= 7.0.2.3)
   selenium-webdriver
   sprockets-rails
-  sqlite3
+  sqlite3 (~> 1.4)
   stimulus-rails
   stripe
   turbo-rails

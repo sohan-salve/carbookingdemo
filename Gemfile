@@ -74,7 +74,7 @@ group :test do
 end
 
 group :development, :test do 
-  gem 'sqlite3'    #gem to use in development-test environment
+  gem 'sqlite3',"~> 1.4"    #gem to use in development-test environment
 end
 
 
