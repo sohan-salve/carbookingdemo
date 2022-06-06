@@ -314,7 +314,7 @@ DEPENDENCIES
   jbuilder
   letter_opener
   net-http
-  pg (~> 0.20)
+  pg
   pry
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)

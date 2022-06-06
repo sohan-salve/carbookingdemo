@@ -74,10 +74,10 @@ group :test do
 end
 
 
-group :development, :test do # <<<< :development, not devlopment
-  gem 'pg', '~> 0.20'
-end
-
+# group :development, :test do # <<<< :development, not devlopment
+#   gem 'pg'
+# end
+gem 'pg'
 
 gem 'devise'
 gem 'bootstrap'
