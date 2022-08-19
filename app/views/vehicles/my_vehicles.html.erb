@@ -2,14 +2,14 @@
 
 <div id="vehicles" class="container">
    <div class="row ">
-  <% @vehicles.each do |vehicle| %>
+      <% @vehicles.each do |vehicle| %>
      
-     <div class="card col-2 bg-success mx-2 my-2">
+     <div class="card col-3 bg-success mx-3 my-3">
 
-     <div >
+      <div>
          <% if vehicle.image.attached? %>
          <div class="mt-2">
-         <%= image_tag vehicle.image, style: "width: 100%; height: 150px"%>
+         <%= image_tag vehicle.image, style: "width: 100%; height: 200px"%>
          </div>
          <% end %>
      
@@ -24,22 +24,19 @@
          <br>
          <strong>Price:</strong>
          <%= vehicle.price %> 
-     </div>
-    
-    
+      </div>
       <hr>
-       <div>
+      <div style="display: inline-flex; padding-bottom:8px;">
        
-      <%= link_to "Show", vehicle, class:"text-dark text-decoration-none" %> |
+         <%= link_to "Show", vehicle, class:"text-white text-decoration-none" %> &nbsp;|&nbsp;
        
 
-      <%= link_to "Edit", edit_vehicle_path(vehicle), class:"text-decoration-none text-dark"%>|
+         <%= link_to "Edit", edit_vehicle_path(vehicle), class:"text-decoration-none text-white"%> &nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
        
-      <%= button_to "Delete", vehicle, method: :delete, class:" text-danger"%>
-      
+         <%= button_to "Delete", vehicle, method: :delete, class:" text-danger " %>
       </div>
     
-    </div>
+     </div>
     <% end %>
 
    </div>

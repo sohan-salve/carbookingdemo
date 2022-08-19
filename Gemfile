@@ -77,7 +77,7 @@ end
 group :development, :test do # <<<< :development, not devlopment
   gem 'sqlite3'
 end
-gem 'pg'
+
 
 gem 'devise'
 gem 'bootstrap'
@@ -88,5 +88,6 @@ gem "net-http"
 #payment gateway
 gem 'stripe'
 gem "letter_opener", group: :development
+gem 'pg'
 
 
